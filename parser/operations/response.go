@@ -29,9 +29,9 @@ func (p *parser) parseResponseComment(pkgPath, pkgName string, operation *oas.Op
 	if err != nil {
 		return fmt.Errorf("parseResponseComment: http status must be int, but got %s", status)
 	}
-	if !utils.IsValidHTTPStatusCode(statusInt) {
-		return fmt.Errorf("parseResponseComment: Invalid http status code %s", status)
-	}
+	//if !utils.IsValidHTTPStatusCode(statusInt) {
+	//	return fmt.Errorf("parseResponseComment: Invalid http status code %s", status)
+	//}
 
 	responseObject := &oas.ResponseObject{
 		Content: map[string]*oas.MediaTypeObject{},
