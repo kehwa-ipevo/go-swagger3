@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	oas "github.com/parvez3019/go-swagger3/openApi3Schema"
-	"github.com/parvez3019/go-swagger3/parser/utils"
+	oas "github.com/kehwa-ipevo/go-swagger3/openApi3Schema"
+	"github.com/kehwa-ipevo/go-swagger3/parser/utils"
 )
 
 func (p *parser) parseResponseComment(pkgPath, pkgName string, operation *oas.OperationObject, comment string) error {
@@ -25,7 +25,7 @@ func (p *parser) parseResponseComment(pkgPath, pkgName string, operation *oas.Op
 	}
 
 	status := matches[1]
-	statusInt, err := strconv.Atoi(matches[1])
+	_, err := strconv.Atoi(matches[1])
 	if err != nil {
 		return fmt.Errorf("parseResponseComment: http status must be int, but got %s", status)
 	}
